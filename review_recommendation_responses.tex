@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+Director’s Review of the 12GeV Software Computing – June 7-8, 2012
+
+https://www.jlab.org/indico/conferenceDisplay.py?confId=4
+
+Committee Recommendations:
+
+1. Presentations in future reviews should cover end user utilization of and experience with the software in more detail. Talks from end users on usage experience with the software and analysis infrastructure would be beneficial.
+
+2. Once a modest all-way data path is established, plan a mock data challenge with fake data, in particular with nominal data rates from GlueX.
+
+3. Nightly builds are performed by some; we recommend them for all.
+
+4. Evaluate standard code evaluation tools, such as valgrind, clang’s scan-build, cppcheck, Gooda,… for inclusion in the software development cycle. We suggest looking at an Insure++ license as well.
+
+5. Run a code validation suite such as valgrind as part of the routine software release procedure.
+
+6. Give full and early consideration to file management, cataloging and data discovery by physicists doing analysis. Report on this area in future reviews.
+
+7. Investigate the feasibility of event-based parallelization of C++ analysis in a multi-core batch environment.
+
+8. Intensify efforts on the HRS tracking development, including calibration and alignment procedures. Define performance milestones which allow time to explore alternatives if problems arise.
+
+9. Study the SBS track reconstruction algorithm efficiency under higher background conditions. It would be useful to know at what level of background the existing algorithm stops functioning.
+
+10. Develop requirements for the SBS algorithm performance, along with a development timeline and a responsible contact. Requirements should include alignment and calibration.
+
+11. A series of scaling tests ramping up using the LQCD farm should be planned and undertaken. Tests should begin soon; don’t wait for completion of the software 18 months before startup.
+
+12. Seriously consider using ROOT as the file format in order to make use of the steady advances in its I/O capabilities.
+
+13. The costs and sustainability of supporting two languages, relative to the advantages, should be regularly assessed as the community of users grows, code development practices become clearer, the framework matures further, etc.
+
+14. With the somewhat aggressive schedule leading up to December 2013, make sure to engage a reasonable number of early adopters to stress test the new framework.
+
+15. Re-use existing efforts from Hall A to decode CODA-formatted data in ROOT.
+
+16. If resources are limited, the Fortran-based SHMS reconstruction should be a low priority.
+
+17. While we encourage the move to git as a code management system, be sure not to underestimate the extent of the paradigm shift. Identify a workflow model for your use of git. Communicate clearly the new paradigm (easy branching, no central repository, etc.). Set up (or link to) tutorials for users with a mapping of routine CVS tasks to their git equivalents (such as cvs diff, etc.). Document or link to documentation for standard git tasks without obvious equivalent in CVS or SVN, such as git rebase, or bisect.
+
+18. A series of scale tests ramping up using JLab’s LQCD farm should be planned and conducted.
+
+19. The data volume and processing scale of GlueX is substantial but plans for data management and workload management systems supporting the operational scale were not made clear. They should be carefully developed.
+
+20. Consider ROOT (with it’s schema evolution capabilities) as a possible alternative for the HDDM DST format.
+
+21. To ensure a smooth transition from development and deployment to operations, particularly for Halls B and D, an explicitly planned program of data challenges, directed both at exercising the performance of the full analysis chain and at exercising the scaling behavior and effectiveness of the computing model at scales progressively closer to operating scale, is recommended. We heard more explicit plans from Hall D than from Hall B in this respect. This data challenge program should be underway now, and should not await the full completion of the offline software.
+
+22. To ensure a smooth transition from development and deployment to operations, particularly for Halls B and D, an explicitly planned program of data challenges, directed both at exercising the performance of the full analysis chain and at exercising the scaling behavior and effectiveness of the computing model at scales progressively closer to operating scale, is recommended. We heard more explicit plans from Hall D than from Hall B in this respect. This data challenge program should be underway now, and should not await the full completion of the offline software. 
+
+23. In response to the question as to how the computing budget is scrubbed, the answer received was that scrubbing happens through this review. This review hasn’t examined the requirements and associated budget sufficiently for this to be considered a scrubbing. Also it is not clear that an overall optimization of the computing models, associated resource requirements, and required budget levels has been done. A process should exist whereby this optimization takes place. For example are the relative roles of disk and tape optimal for making analysis as effective as possible, within budgetary constraints.
+
+24. The measures being planned to render LQCD resources usable by the 12GeV community should have high priority. 
+
+Director’s 12GeV Software Review – February 10-11, 2015
+
+https://www.jlab.org/indico/confLogin.py?returnURL=https%3A%2F%2Fwww.jlab.org%2Findico%2FconferenceDisplay.py%3FconfId%3D93&confId=93
+
+Committee Recommendations:
+
+It seems that some combination of code analysis tools such as cppcheck and valgrind are being used by all experiments. The applied tools should be unified to some extent to capture a larger phase space of potential programs, such as using clang’s scan-build feature. It would be beneficial if a professional code analysis tool such as coverity would be licensed and made centrally available.
+
+Those groups that have not yet set up nightly rebuilds should do so, and flag the checked-in code that caused the rebuild to fail.
+
+Clarify for the users the role of time stamps and run numbers. Unless the condition is varying too rapidly, we recommend using run numbers as a primary key for constants. Treat the time as a secondary information to be stored with the collection of constants.
+
+Explore the use of Analysis Trains in collaboration with GlueX so the technology is in place once the data becomes available.
+
+Establish milestones for the migration to Geant4, prioritized appropriately considering other activities and the needs of physics running, and identify more manpower to complete the milestones.
+
+Establish a strategy and timescale for meeting data management/cataloging needs, exploring whether common tools can be part of the strategy.
+
+Raise the priority of investigating and tracking performance problems with profiling tools. The current choice of valgrind is heavy. Consider using a sampling profiler, and even better, consult with the HPC staff to both borrow a licensed commercial tool and get help in understanding the results.
+
+Explore, ideally in collaboration with Hall B, the use of A nalysis Trains w hich have become the backbone of user data analysis at other facilities. Even if the current data sets are small enough to be kept disk­resident entirely, this is likely to change in the future. Trains are ideal to make the best use of scarce resources, such as tape bandwidth. Assign a person to be responsible for the maintenance of train­managed data sets. 
+
+As you move from the era of data challenges to that of data taking you should transition the people you have operating the challenges to a computing operations group that is responsible for both the reconstruction of collected data and the creation of monte carlo samples for analysis. If you decide that analysis trains are useful, the computing operations group would also insure that the coordination and services required are available. 
+
+\end{document}
