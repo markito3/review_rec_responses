@@ -1,0 +1,2 @@
+review_recommendation_responses.pdf: review_recommendation_responses.tex
+	pdflatex review_recommendation_responses
